@@ -4,12 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task01ReverseNumbers
+class Task01ReverseNumbersWithAStack
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+
+        int[] numbers = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
+
+        Stack<int> stack = new Stack<int>(numbers);
+
+        while (stack.Count > 0)
         {
+            Console.Write($"{stack.Pop()} ");
         }
+        Console.WriteLine();
     }
 }
+
