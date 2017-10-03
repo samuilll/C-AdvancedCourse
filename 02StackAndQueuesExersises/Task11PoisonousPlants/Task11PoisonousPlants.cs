@@ -61,7 +61,18 @@ class Task11PoisonousPlants
                 {
                     daysAlive[i] = 1;
 
-                    indexersStack.Push(i);
+                    //   indexersStack.Push(currentPop);
+                    if (daysAlive[currentPop]==1)
+                    {
+                        indexersStack.Push(i);
+                    }
+                    else
+                    {
+                        indexersStack.Push(currentPop);
+                        indexersStack.Push(i);
+
+                    }
+
                 }
                 else
                 {
