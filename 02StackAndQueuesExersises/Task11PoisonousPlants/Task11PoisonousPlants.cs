@@ -10,28 +10,28 @@ class Task11PoisonousPlants
     static void Main(string[] args)
     {
 
-     //   int numberOfPlants = int.Parse(Console.ReadLine());
+        int numberOfPlants = int.Parse(Console.ReadLine());
 
         int[] plantsArray = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray(  );
 
         int[] daysAlive = new int[plantsArray.Length];
 
-        Stack<int> indexersStack = new Stack<int>(plantsArray.Reverse());
+        Stack<int> indexersStack = new Stack<int>();
 
         // Stack<int> storage = new Stack<int>(plantsArray);
 
-        int days = 0;
+        int maxDaysAlive = 1;
 
-        indexersStack.Push(plantsArray[0]);
+        indexersStack.Push(0);
 
         var currentMinValue = plantsArray[0];
 
-        plantsArray[0] = -1;
+        daysAlive[0] = -1;
 
         for (int i = 1; i < plantsArray.Length; i++)
         {
 
-            var currentValue = plantsArray[i];
+            var currentPlantValue = plantsArray[i];
 
             if (plantsArray[i] <= currentMinValue)
             {
@@ -41,7 +41,7 @@ class Task11PoisonousPlants
 
                 currentMinValue = plantsArray[i];
 
-                Console.WriteLine($"{plantsArray[i]:D2} -> {daysAlive[i]}");
+            //    Console.WriteLine($"{plantsArray[i]:D2} -> {daysAlive[i]}");
 
                 continue;
             }
@@ -61,7 +61,6 @@ class Task11PoisonousPlants
                 {
                     daysAlive[i] = 1;
 
-                    //   indexersStack.Push(currentPop);
                     if (daysAlive[currentPop]==1)
                     {
                         indexersStack.Push(i);
@@ -70,7 +69,6 @@ class Task11PoisonousPlants
                     {
                         indexersStack.Push(currentPop);
                         indexersStack.Push(i);
-
                     }
 
                 }
@@ -89,7 +87,16 @@ class Task11PoisonousPlants
 
                         if (plantsArray[i]<=plantsArray[poppedIndex])
                         {
-                            daysAlive[i] = daysAlive[poppedIndex] + 1;
+                            if (daysAlive[i]<=daysAlive[poppedIndex])
+                            {
+                                daysAlive[i] = daysAlive[poppedIndex] + 1;
+
+                                if (maxDaysAlive<daysAlive[i])
+                                {
+                                    maxDaysAlive = daysAlive[i];
+                                }
+                            }
+                            
                         }
                         else
                         {
@@ -102,11 +109,8 @@ class Task11PoisonousPlants
                     }
             }
 
-            Console.WriteLine($"{plantsArray[i]:D2} -> {daysAlive[i]}");
+         //  Console.WriteLine($"{plantsArray[i]:D2} -> {daysAlive[i]}");
         }
-
-
-        
-
+        Console.WriteLine(maxDaysAlive);
     }
 }
