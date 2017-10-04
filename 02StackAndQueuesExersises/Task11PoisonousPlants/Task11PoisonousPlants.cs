@@ -10,7 +10,7 @@ class Task11PoisonousPlants
     static void Main(string[] args)
     {
 
-        int numberOfPlants = int.Parse(Console.ReadLine());
+        int numberOfPlants = int.Parse(Console.ReadLine());//
 
         int[] plantsArray = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray(  );
 
