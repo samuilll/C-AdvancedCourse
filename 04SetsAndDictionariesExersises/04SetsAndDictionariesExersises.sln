@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26430.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_1_UniqueUsernames", "_1_UniqueUsernames\_1_UniqueUsernames.csproj", "{26ADB922-904F-45B0-A09E-26EF278A1534}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task02SetsOfElements", "Task02SetsOfElements\Task02SetsOfElements.csproj", "{0491DFF7-2BA2-4699-B55E-09B3A2A8D3E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task03PeriodicTable", "Task03PeriodicTable\Task03PeriodicTable.csproj", "{3B216A36-2D8A-45CD-BC7E-F1D8D327154E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{26ADB922-904F-45B0-A09E-26EF278A1534}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26ADB922-904F-45B0-A09E-26EF278A1534}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26ADB922-904F-45B0-A09E-26EF278A1534}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0491DFF7-2BA2-4699-B55E-09B3A2A8D3E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0491DFF7-2BA2-4699-B55E-09B3A2A8D3E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0491DFF7-2BA2-4699-B55E-09B3A2A8D3E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0491DFF7-2BA2-4699-B55E-09B3A2A8D3E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B216A36-2D8A-45CD-BC7E-F1D8D327154E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B216A36-2D8A-45CD-BC7E-F1D8D327154E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B216A36-2D8A-45CD-BC7E-F1D8D327154E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B216A36-2D8A-45CD-BC7E-F1D8D327154E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
