@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{85DAA54B-A464-44EA-A53E-B1146745C19A}</ProjectGuid>
+    <ProjectGuid>{44B74FF9-B1DC-4B92-9408-19FAE930F36A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Task14DragonArmy</RootNamespace>
-    <AssemblyName>Task14DragonArmy</AssemblyName>
+    <RootNamespace>Task00PhoneBookUpgrade</RootNamespace>
+    <AssemblyName>Task00PhoneBookUpgrade</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,8 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dragon.cs" />
-    <Compile Include="Task14DragonArmy.cs" />
+    <Compile Include="Task00PhoneBookUpgrade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
