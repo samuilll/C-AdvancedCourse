@@ -29,13 +29,13 @@ using System.Threading.Tasks;
                     Console.WriteLine($"Contact {input[1]} does not exist.");
                 }
             }
-            else if (input[0]== "ListAll")
-            {
-                foreach (var pair in phonebook.OrderBy(n=>n.Key))
-                {
-                    Console.WriteLine($"{pair.Key} -> {pair.Value}");
-                }
-            }
+            //else if (input[0]== "ListAll")
+            //{
+            //    foreach (var pair in phonebook.OrderBy(n=>n.Key))
+            //    {
+            //        Console.WriteLine($"{pair.Key} -> {pair.Value}");
+            //    }
+            //}
 
             input = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToArray();
         }
