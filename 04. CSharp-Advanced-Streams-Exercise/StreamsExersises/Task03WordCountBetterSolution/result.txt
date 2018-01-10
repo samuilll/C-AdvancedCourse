@@ -1,0 +1,6 @@
+world => 4
+appointment => 3
+crime => 2
+war => 2
+dostoevsky => 1
+two => 1
