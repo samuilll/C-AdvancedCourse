@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.4
+VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task01MatrixOfPalindromess", "Task01MatrixOfPalindromess\Task01MatrixOfPalindromess.csproj", "{19DE4A7C-314A-413E-AF9D-466F87467FA1}"
 EndProject
@@ -22,6 +22,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task09CrossFire", "Task09CrossFire\Task09CrossFire.csproj", "{7C58B806-2B62-4F7F-8F96-CED6F4D1F0B4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task10TheHeiganDance", "Task10TheHeiganDance\Task10TheHeiganDance.csproj", "{A25C2E61-8B5E-4FF0-BCC5-1FF0B298DCAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task10WithoutMatrix", "Task10WithoutMatrix\Task10WithoutMatrix.csproj", "{15B55ADB-B427-466F-91BF-52F847984126}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task11ParkingLot", "Task11ParkingLot\Task11ParkingLot.csproj", "{8FF9986C-47F2-491E-818A-4F4D880D3E53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task12StringMatrixRotation", "Task12StringMatrixRotation\Task12StringMatrixRotation.csproj", "{0E869EE5-58D7-4B76-A85E-588198362891}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,8 +75,23 @@ Global
 		{A25C2E61-8B5E-4FF0-BCC5-1FF0B298DCAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A25C2E61-8B5E-4FF0-BCC5-1FF0B298DCAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A25C2E61-8B5E-4FF0-BCC5-1FF0B298DCAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B55ADB-B427-466F-91BF-52F847984126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B55ADB-B427-466F-91BF-52F847984126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B55ADB-B427-466F-91BF-52F847984126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B55ADB-B427-466F-91BF-52F847984126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FF9986C-47F2-491E-818A-4F4D880D3E53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FF9986C-47F2-491E-818A-4F4D880D3E53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FF9986C-47F2-491E-818A-4F4D880D3E53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FF9986C-47F2-491E-818A-4F4D880D3E53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E869EE5-58D7-4B76-A85E-588198362891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E869EE5-58D7-4B76-A85E-588198362891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E869EE5-58D7-4B76-A85E-588198362891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E869EE5-58D7-4B76-A85E-588198362891}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3E83137-02CC-427E-AFCB-C1465C787F7C}
 	EndGlobalSection
 EndGlobal

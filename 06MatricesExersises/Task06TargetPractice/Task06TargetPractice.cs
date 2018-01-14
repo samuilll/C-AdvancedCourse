@@ -9,38 +9,18 @@ class Task06TargetPractice
 {
     static void Main(string[] args)
     {
-        int[] matrixParams = Console.ReadLine()
-               .Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries)
-               .Select(int.Parse)
-               .ToArray();
+        var matrix = InticializeTheMatrix();
+        
+        FillTheMatrixWithSnakes(matrix);
 
-        int rows = matrixParams[0];
+   //     PrintTheMatrix(matrix);
 
-        int columns = matrixParams[1];
+   //   Console.WriteLine();
 
-        string snake = Console.ReadLine();
+        ShotTheMatrix(matrix);
 
-        var matrix = new char[rows][];
-
-        int[] shotParams = Console.ReadLine()
-                   .Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries)
-                   .Select(int.Parse)
-                   .ToArray();
-
-        for (int i = 0; i < matrix.Length; i++)
-        {
-            matrix[i] = new char[columns];
-        }
-
-        FillTheMatrixWithSnakes(snake, matrix);
-        PrintTheMatrix(matrix);
-        Console.WriteLine();
-
-        ShotTheMatrix(matrix, shotParams);
-
-
-        PrintTheMatrix(matrix);
-        Console.WriteLine();
+    //    PrintTheMatrix(matrix);
+     //   Console.WriteLine();
 
         RearrangeTheMatrixBecauseOfGravity(matrix);
 
@@ -73,8 +53,13 @@ class Task06TargetPractice
         }
     }
 
-    private static void ShotTheMatrix(char[][] matrix, int[] shotParams)
+    private static void ShotTheMatrix(char[][] matrix)
     {
+        int[] shotParams = Console.ReadLine()
+            .Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries)
+            .Select(int.Parse)
+            .ToArray();
+
         var shotRow = shotParams[0];
 
         var shotCol = shotParams[1];
@@ -93,12 +78,10 @@ class Task06TargetPractice
             {
                 if (row < 0)
                 {
-                  //  counter1--;
                     break; 
                 }
                 if (col<0)
                 {
-                  //  counter2--;
                     continue;
                 }
                 matrix[row][col] = ' ';
@@ -136,8 +119,11 @@ class Task06TargetPractice
         }
     }
 
-    private static void FillTheMatrixWithSnakes(string snake, char[][] matrix)
+    private static void FillTheMatrixWithSnakes(char[][] matrix)
     {
+
+        string snake = Console.ReadLine();
+
         int col = matrix[0].Length;
 
         var charCounter = 0;
@@ -184,6 +170,24 @@ class Task06TargetPractice
         }
 
         return charCounter;
+    }
+
+    private static char[][] InticializeTheMatrix()
+    {
+        int[] matrixParams = Console.ReadLine()
+            .Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries)
+            .Select(int.Parse)
+            .ToArray();
+
+
+        int rows = matrixParams[0];
+
+        int columns = matrixParams[1];
+
+        char[][] matrix = new char[rows][].Select(r => r = new char[columns]).ToArray();
+
+        return matrix;
+
     }
 }
 

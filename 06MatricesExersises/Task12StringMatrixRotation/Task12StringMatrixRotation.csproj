@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A25C2E61-8B5E-4FF0-BCC5-1FF0B298DCAA}</ProjectGuid>
+    <ProjectGuid>{0E869EE5-58D7-4B76-A85E-588198362891}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Task10TheHeiganDance</RootNamespace>
-    <AssemblyName>Task10TheHeiganDance</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>Task12StringMatrixRotation</RootNamespace>
+    <AssemblyName>Task12StringMatrixRotation</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -42,8 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Player.cs" />
-    <Compile Include="Task10TheHeiganDance.cs" />
+    <Compile Include="Task12StringMatrixRotation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

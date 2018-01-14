@@ -27,12 +27,11 @@ class Player
         this.Health = health;
         this.Damage = damage;
         this.IsHitByCloud = isHit;
-        this.IsAlive = isAlive;
     }
 
 }
 
-class Task10TheHeiganDance
+class Task10WithoutMatrix
 {
     static void Main(string[] args)
     {
@@ -40,11 +39,7 @@ class Task10TheHeiganDance
 
         Player player = new Player(7, 7, 18500, playerDamage, false, true);
 
-        var matrix = InticializeTheMatrix();
-
         double heiganHealth = 3000000;
-
-        var lastKindOfAttack = string.Empty;
 
         string spell = string.Empty;
 
@@ -79,18 +74,20 @@ class Task10TheHeiganDance
 
             spell = hitCorrdinatesAndKindOfSpell[0];
 
-            if (IsPlayerInTheDamgedZone(player, matrix, hitRow, hitCol))
+            if (IsPlayerInTheDamgedZone(player, hitRow, hitCol))
             {
-                player = RunPlayerRun(player, matrix, hitRow, hitCol, spell);
+                player = RunPlayerRun(player, hitRow, hitCol, spell);
             }
 
             if (player.Health <= 0)
             {
                 break;
             }
+
         }
 
         PrintTheResult(player, heiganHealth, spell);
+
     }
 
     private static void PrintTheResult(Player player, double heiganHealth, string spell)
@@ -136,18 +133,18 @@ class Task10TheHeiganDance
         }
     }
 
-    private static Player RunPlayerRun(Player player, int[][] matrix, int hitRow, int hitCol, string spell)
+    private static Player RunPlayerRun(Player player,int hitRow, int hitCol, string spell)
     {
 
         if (player.Row - 1 < hitRow - 1 && player.Row - 1 >= 0) //try up
         {
             player.Row -= 1;
         }
-        else if (player.Col + 1 > hitCol + 1 && player.Col + 1 < matrix[0].Length) //try right
+        else if (player.Col + 1 > hitCol + 1 && player.Col + 1 < 15) //try right
         {
             player.Col += 1;
         }
-        else if (player.Row + 1 > hitRow + 1 && player.Row + 1 < matrix.Length)  //try down
+        else if (player.Row + 1 > hitRow + 1 && player.Row + 1 < 15)  //try down
         {
             player.Row += 1;
         }
@@ -169,12 +166,10 @@ class Task10TheHeiganDance
                 player.Health -= 6000;
             }
         }
-
         return player;
-
     }
 
-    private static bool IsPlayerInTheDamgedZone(Player player, int[][] matrix, int hitRow, int hitCol)
+    private static bool IsPlayerInTheDamgedZone(Player player, int hitRow, int hitCol)
     {
         if (((player.Row == hitRow - 1) || (player.Row == hitRow) || (player.Row == hitRow + 1)) &&
             ((player.Col == hitCol - 1) || (player.Col == hitCol) || (player.Col == hitCol + 1)))
@@ -185,15 +180,7 @@ class Task10TheHeiganDance
         return false;
     }
 
-    private static int[][] InticializeTheMatrix()
-    {
-        int rows = 15;
 
-        int columns = 15;
-
-        int[][] matrix = new int[rows][].Select(r => r = new int[columns]).ToArray();
-
-        return matrix;
-    }
 }
 
+    

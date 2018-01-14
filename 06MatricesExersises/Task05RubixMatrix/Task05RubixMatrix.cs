@@ -9,25 +9,41 @@ class Task05RubixMatrix
 {
     static void Main(string[] args)
     {
-        int[] matrixParams = Console.ReadLine()
-                    .Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries)
-                    .Select(int.Parse)
-                    .ToArray();
 
-        int commandsNumber = int.Parse(Console.ReadLine());
+        int[][] matrix = InticializeTheMatrix();
+
+        ImplementTheCommands(matrix);
+
+        RearrangeTheMatrix(matrix);
+
+    }
+
+    private static int[][] InticializeTheMatrix()
+    {
+        int[] matrixParams = Console.ReadLine()
+            .Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries)
+            .Select(int.Parse)
+            .ToArray();
+
 
         int rows = matrixParams[0];
 
         int columns = matrixParams[1];
 
-        int[][] matrix = new int[rows][];
+        int[][] matrix = new int[rows][].Select(r=>r = new int[columns]).ToArray();
 
-        FillTheMatrixWithNumbers(columns, matrix);
+        var counter = 0;
 
-        ImplementTheCommands(matrix, commandsNumber);
+        for (int row = 0; row < matrix.Length; row++)
+        {
+            for (int col = 0; col < matrix[row].Length; col++)
+            {
+                matrix[row][col] = ++counter;
+            }
+        }
 
-        RearrangeTheMatrix(matrix);
-
+        return matrix;
+       
     }
 
     private static void RearrangeTheMatrix(int[][] matrix)
@@ -88,8 +104,10 @@ class Task05RubixMatrix
         return indexers;
     }
 
-    private static void ImplementTheCommands(int[][] matrix, int commandsNumber)
+    private static void ImplementTheCommands(int[][] matrix)
     {
+        int commandsNumber = int.Parse(Console.ReadLine());
+
         for (int i = 0; i < commandsNumber; i++)
         {
             var commands = Console.ReadLine()
@@ -226,22 +244,6 @@ class Task05RubixMatrix
         }
     }
 
-    private static void FillTheMatrixWithNumbers(int columns, int[][] matrix)
-    {
-        for (int row = 0; row < matrix.Length; row++)
-        {
-            matrix[row] = new int[columns];
-        }
-
-        var counter = 0;
-
-        for (int row = 0; row < matrix.Length; row++)
-        {
-            for (int col = 0; col < matrix[row].Length; col++)
-            {
-                matrix[row][col] = ++counter;
-            }
-        }
-    }
+   
 }
 
