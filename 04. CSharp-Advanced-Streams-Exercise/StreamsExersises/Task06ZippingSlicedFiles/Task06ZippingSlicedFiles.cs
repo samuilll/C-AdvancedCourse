@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 
-class Task05SlicingFiles
+class Task06ZippingSlicedFiles
 {
     static void Main(string[] args)
     {
@@ -41,35 +42,35 @@ class Task05SlicingFiles
             {
                 Console.WriteLine("You have to imput a number!");
             }
-        
+
         }
         else if (choise == "Assemble")
         {
             Console.WriteLine("Please write the path of the derictory where the files are:");
             var filesToAssembleDir = Console.ReadLine();
-          
-                try
+
+            try
+            {
+                var files = Directory.GetFiles(filesToAssembleDir);
+
+                if (files.Length == 0)
                 {
-                    var files = Directory.GetFiles(filesToAssembleDir);
+                    Console.WriteLine("There are no files in the derictory. You have to slice first");
 
-                    if (files.Length == 0)
-                    {
-                        Console.WriteLine("There are no files in the derictory. You have to slice first");
+                    choise = ChooseTheOperation();
 
-                        choise = ChooseTheOperation();
-
-                        ChoosenAction(choise);
-                    }
-
-                    Assemble(files);
-
+                    ChoosenAction(choise);
                 }
-                catch (DirectoryNotFoundException)
-                {
-                   Console.WriteLine("Please choose an existing derictory!");
 
-                }
+                Assemble(files);
+
             }
+            catch (DirectoryNotFoundException)
+            {
+                Console.WriteLine("Please choose an existing derictory!");
+
+            }
+        }
 
         else
         {
@@ -99,22 +100,21 @@ class Task05SlicingFiles
             {
                 using (var reader = new FileStream(file, FileMode.Open, FileAccess.Read))
                 {
-                    var buffer = new byte[4096];
-
-                    while (true)
+                    using (GZipStream decompresser = new GZipStream(reader,CompressionMode.Decompress))
                     {
-                        var readBytes = reader.Read(buffer, 0, buffer.Length);
+                        var buffer = new byte[4096];
 
-                        if (readBytes==0)
-                        {
-                            break;
+                        var readBytes = decompresser.Read(buffer, 0, buffer.Length);
+
+                       while (readBytes!=0)
+                        {                          
+                            writer.Write(buffer, 0, buffer.Length);
+
+                            readBytes = decompresser.Read(buffer, 0, buffer.Length);
                         }
 
-                        writer.Write(buffer, 0, buffer.Length);
+                        Console.WriteLine($"File № {++counter} completed");
                     }
-
-                    Console.WriteLine($"File № {++counter} completed");
-
                 }
             }
         }
@@ -122,39 +122,46 @@ class Task05SlicingFiles
 
     private static void Slice(int partsNumber, string fileToDividePath, string writeDirectoryPath)
     {
-        using (var reader = new FileStream(fileToDividePath, FileMode.Open, FileAccess.Read))
+        using (var source = new FileStream(fileToDividePath, FileMode.Open, FileAccess.Read))
         {
             if (!Directory.Exists(writeDirectoryPath))
             {
                 Directory.CreateDirectory(writeDirectoryPath);
             }
 
-            var partSize = reader.Length / partsNumber + 1;
+            var partSize = source.Length / partsNumber + 1;
 
             for (int i = 0; i < partsNumber; i++)
             {
                 var partNumber = i.ToString();
 
-                using (var writer = new FileStream($"{writeDirectoryPath}/part - {partNumber}.mkv", FileMode.Create))
+                using (var destination = new FileStream($"{writeDirectoryPath}/part - {partNumber}.gz", FileMode.Create))
                 {
 
-                    var buffer = new byte[4096];
-
-                    while (writer.Length < partSize)
+                    using (GZipStream zipper = new GZipStream(destination, CompressionMode.Compress, false))
                     {
 
-                        var readBytes = reader.Read(buffer, 0, buffer.Length);
+                        var buffer = new byte[4096];
 
-                        if (readBytes == 0)
+                        while (destination.Length < partSize)
                         {
-                            break;
+
+                            var reader = source.Read(buffer, 0, buffer.Length);
+
+                            if (reader == 0)
+                            {
+                                break;
+                            }
+
+                            zipper.Write(buffer, 0, buffer.Length);
+
                         }
 
-                        writer.Write(buffer, 0, buffer.Length);
 
                     }
 
-                    Console.WriteLine($"File № {i} completed");
+
+                    Console.WriteLine($"File № {i} compression completed");
 
                 }
 
