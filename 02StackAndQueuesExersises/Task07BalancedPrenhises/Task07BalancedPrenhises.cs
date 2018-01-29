@@ -29,7 +29,7 @@ class Task07BalancedParetheses
         {
             stackSequence.Push(line[i]);
 
-            if (CompareSymbols(line[i], line[i + 1]))
+            if (CompareSymbols(line[i], line[i + 1]))          //    [[()]](){}[{}]     ([)]
             {
 
                 check = true;
