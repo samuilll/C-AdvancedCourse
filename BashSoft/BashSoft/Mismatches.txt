@@ -1,0 +1,306 @@
+using System;
+
+using System.Collections.Generic;
+
+using System.Linq;
+
+using System.Text;
+
+using System.Threading.Tasks;
+
+
+
+
+
+    class Task02SquareWithMaximumSum
+
+    {
+
+        static void Main(string[] args)
+
+        {
+
+        int[] matrixParams = Console.ReadLine()
+
+            .Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries)
+
+            .Select(int.Parse)
+
+            .ToArray();
+
+
+
+        int rows = matrixParams[0];
+
+
+
+        int columns = matrixParams[1];
+
+
+
+        int[][] matrix = new int[rows][];
+
+
+
+        int maxSum = int.MinValue;
+
+
+
+Mismatch at line 24 --expected: "        int[][] submatrix = new int[2][];", actual: "        int[][] submatrix = new   {"
+
+Mismatch at line 25 --expected: "", actual: "        int[] matrixParams = Console.ReadLine()"
+
+Mismatch at line 26 --expected: "        for (int i = 0; i < submatrix.Length; i++)", actual: "            .Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries)"
+
+Mismatch at line 27 --expected: "        {", actual: "            .Select(int.Parse)"
+
+Mismatch at line 28 --expected: "            submatrix[i] = new int[2];", actual: "            .ToArray();"
+
+Mismatch at line 29 --expected: "        }", actual: ""
+
+Mismatch at line 30 --expected: "", actual: "        int rows = matrixParams[0];"
+
+Mismatch at line 31 --expected: "        for (int row = 0; row < matrix.Length; row++)", actual: ""
+
+Mismatch at line 32 --expected: "        {", actual: "        int columns = matrixParams[1];"
+
+Mismatch at line 33 --expected: "            matrix[row] = new int[columns];", actual: ""
+
+Mismatch at line 34 --expected: "", actual: "        int[][] matrix = new int[rows][];"
+
+Mismatch at line 35 --expected: "            matrix[row] = Console.ReadLine()", actual: ""
+
+Mismatch at line 36 --expected: "                .Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries)", actual: "        int maxSum = int.MinValue;"
+
+Mismatch at line 37 --expected: "                .Select(int.Parse)", actual: ""
+
+Mismatch at line 38 --expected: "                .ToArray();", actual: "        int[][] submatrix = new int[2][];"
+
+
+
+Mismatch at line 40 --expected: "            //    Console.WriteLine(string.Join(" ",matrix[row]));", actual: "        for (int i = 0; i < submatrix.Length; i++)"
+
+Mismatch at line 41 --expected: "        }", actual: "        {"
+
+Mismatch at line 42 --expected: "        for (int row = 0; row < matrix.Length-1; row++)", actual: "            submatrix[i] = new int[2];"
+
+Mismatch at line 43 --expected: "        {", actual: "        }"
+
+Mismatch at line 44 --expected: "            for (int col = 0; col < matrix[row].Length-1; col++)", actual: ""
+
+Mismatch at line 45 --expected: "            {", actual: "        for (int row = 0; row < matrix.Length; row++)"
+
+Mismatch at line 46 --expected: "                int sum = matrix[row][col] + matrix[row][col+1]+matrix[row+1][col]+matrix[row+1][col+1];", actual: "        {"
+
+Mismatch at line 47 --expected: "", actual: "            matrix[row] = new int[columns];int[2][];"
+
+Mismatch at line 48 --expected: "                if (maxSum<sum)", actual: ""
+
+Mismatch at line 49 --expected: "                {", actual: "        for (int i = 0; i < submatrix.Length; i++)"
+
+Mismatch at line 50 --expected: "                    submatrix[0][0] = matrix[row][col];", actual: "        {"
+
+Mismatch at line 51 --expected: "                    submatrix[0][1] = matrix[row][col+1];", actual: "            submatrix[i] = new int[2];"
+
+Mismatch at line 52 --expected: "                    submatrix[1][0] = matrix[row+1][col];   ", actual: "        }"
+
+Mismatch at line 53 --expected: "                    submatrix[1][1] = matrix[row+1][col+1];", actual: ""
+
+Mismatch at line 54 --expected: "                    maxSum =sum;", actual: "        for (int row = 0; row < matrix.Length; row++)"
+
+Mismatch at line 55 --expected: "                }", actual: "        {"
+
+Mismatch at line 56 --expected: "            }", actual: "            matrix[row] = new int[columns];"
+
+Mismatch at line 57 --expected: "        }", actual: ""
+
+Mismatch at line 58 --expected: "", actual: "            matrix[row] = Console.ReadLine()"
+
+Mismatch at line 59 --expected: "        Console.WriteLine(string.Join(" ",submatrix[0]));", actual: "                .Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries)"
+
+Mismatch at line 60 --expected: "        Console.WriteLine(string.Join(" ", submatrix[1]));", actual: "                .Select(int.Parse)"
+
+Mismatch at line 61 --expected: "        Console.WriteLine(maxSum);", actual: "                .ToArray();"
+
+Mismatch at line 62 --expected: "    }", actual: ""
+
+Mismatch at line 63 --expected: "    }", actual: "            //    Console.WriteLine(string.Join(" ",matrix[row]));"
+
+Mismatch at line 64 --expected: "", actual: "        }"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+using System.Collections.Generic;
+
+using System.Linq;
+
+using System.Text;
+
+using System.Threading.Tasks;
+
+
+
+
+
+    class Task02SquareWithMaximumSum
+
+    {
+
+        static void Main(string[] args)
+
+        {
+
+        int[] matrixParams = Console.ReadLine()
+
+            .Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries)
+
+            .Select(int.Parse)
+
+            .ToArray();
+
+
+
+        int rows = matrixParams[0];
+
+
+
+        int columns = matrixParams[1];
+
+
+
+        int[][] matrix = new int[rows][];
+
+
+
+        int maxSum = int.MinValue;
+
+
+
+Mismatch at line 24 --expected: "        int[][] submatrix = new int[2][];", actual: "        int[][] submatrix = new   {"
+
+Mismatch at line 25 --expected: "", actual: "        int[] matrixParams = Console.ReadLine()"
+
+Mismatch at line 26 --expected: "        for (int i = 0; i < submatrix.Length; i++)", actual: "            .Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries)"
+
+Mismatch at line 27 --expected: "        {", actual: "            .Select(int.Parse)"
+
+Mismatch at line 28 --expected: "            submatrix[i] = new int[2];", actual: "            .ToArray();"
+
+Mismatch at line 29 --expected: "        }", actual: ""
+
+Mismatch at line 30 --expected: "", actual: "        int rows = matrixParams[0];"
+
+Mismatch at line 31 --expected: "        for (int row = 0; row < matrix.Length; row++)", actual: ""
+
+Mismatch at line 32 --expected: "        {", actual: "        int columns = matrixParams[1];"
+
+Mismatch at line 33 --expected: "            matrix[row] = new int[columns];", actual: ""
+
+Mismatch at line 34 --expected: "", actual: "        int[][] matrix = new int[rows][];"
+
+Mismatch at line 35 --expected: "            matrix[row] = Console.ReadLine()", actual: ""
+
+Mismatch at line 36 --expected: "                .Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries)", actual: "        int maxSum = int.MinValue;"
+
+Mismatch at line 37 --expected: "                .Select(int.Parse)", actual: ""
+
+Mismatch at line 38 --expected: "                .ToArray();", actual: "        int[][] submatrix = new int[2][];"
+
+
+
+Mismatch at line 40 --expected: "            //    Console.WriteLine(string.Join(" ",matrix[row]));", actual: "        for (int i = 0; i < submatrix.Length; i++)"
+
+Mismatch at line 41 --expected: "        }", actual: "        {"
+
+Mismatch at line 42 --expected: "        for (int row = 0; row < matrix.Length-1; row++)", actual: "            submatrix[i] = new int[2];"
+
+Mismatch at line 43 --expected: "        {", actual: "        }"
+
+Mismatch at line 44 --expected: "            for (int col = 0; col < matrix[row].Length-1; col++)", actual: ""
+
+Mismatch at line 45 --expected: "            {", actual: "        for (int row = 0; row < matrix.Length; row++)"
+
+Mismatch at line 46 --expected: "                int sum = matrix[row][col] + matrix[row][col+1]+matrix[row+1][col]+matrix[row+1][col+1];", actual: "        {"
+
+Mismatch at line 47 --expected: "", actual: "            matrix[row] = new int[columns];int[2][];"
+
+Mismatch at line 48 --expected: "                if (maxSum<sum)", actual: ""
+
+Mismatch at line 49 --expected: "                {", actual: "        for (int i = 0; i < submatrix.Length; i++)"
+
+Mismatch at line 50 --expected: "                    submatrix[0][0] = matrix[row][col];", actual: "        {"
+
+Mismatch at line 51 --expected: "                    submatrix[0][1] = matrix[row][col+1];", actual: "            submatrix[i] = new int[2];"
+
+Mismatch at line 52 --expected: "                    submatrix[1][0] = matrix[row+1][col];   ", actual: "        }"
+
+Mismatch at line 53 --expected: "                    submatrix[1][1] = matrix[row+1][col+1];", actual: ""
+
+Mismatch at line 54 --expected: "                    maxSum =sum;", actual: "        for (int row = 0; row < matrix.Length; row++)"
+
+Mismatch at line 55 --expected: "                }", actual: "        {"
+
+Mismatch at line 56 --expected: "            }", actual: "            matrix[row] = new int[columns];"
+
+Mismatch at line 57 --expected: "        }", actual: ""
+
+Mismatch at line 58 --expected: "", actual: "            matrix[row] = Console.ReadLine()"
+
+Mismatch at line 59 --expected: "        Console.WriteLine(string.Join(" ",submatrix[0]));", actual: "                .Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries)"
+
+Mismatch at line 60 --expected: "        Console.WriteLine(string.Join(" ", submatrix[1]));", actual: "                .Select(int.Parse)"
+
+Mismatch at line 61 --expected: "        Console.WriteLine(maxSum);", actual: "                .ToArray();"
+
+Mismatch at line 62 --expected: "    }", actual: ""
+
+Mismatch at line 63 --expected: "    }", actual: "            //    Console.WriteLine(string.Join(" ",matrix[row]));"
+
+Mismatch at line 64 --expected: "", actual: "        }"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

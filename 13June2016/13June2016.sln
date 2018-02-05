@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task02JediGalaxy", "Task02J
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task03JediCode-X", "Task03JediCode-X\Task03JediCode-X.csproj", "{3B847FFA-302A-404E-9A7A-D150E02D1042}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task04JediDreams", "Task04JediDreams\Task04JediDreams.csproj", "{A7429443-0280-40E1-B728-6E688321C159}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3B847FFA-302A-404E-9A7A-D150E02D1042}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B847FFA-302A-404E-9A7A-D150E02D1042}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B847FFA-302A-404E-9A7A-D150E02D1042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7429443-0280-40E1-B728-6E688321C159}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7429443-0280-40E1-B728-6E688321C159}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7429443-0280-40E1-B728-6E688321C159}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7429443-0280-40E1-B728-6E688321C159}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

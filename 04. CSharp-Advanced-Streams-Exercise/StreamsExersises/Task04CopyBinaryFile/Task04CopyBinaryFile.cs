@@ -11,10 +11,15 @@ using System.Threading.Tasks;
         static void Main(string[] args)
         {
 
-            const string winRarFilePath = "../../20449027_1752259334801383_4517628934508725667_o.jpg";
-            const string destinationFilePath = "../../result.jpg";
+        Console.WriteLine("Please choose the path of the file:");
 
-            using (FileStream source = new FileStream(winRarFilePath,FileMode.Open))
+             string filePath = Console.ReadLine();
+
+        Console.WriteLine($"Please choose the name (with extension) of the destiantion file :");
+
+        string destinationFilePath = @"../../" + Console.ReadLine();
+
+            using (FileStream source = new FileStream(filePath,FileMode.Open))
             {
                 using (FileStream destination = new FileStream(destinationFilePath,FileMode.Create))
                 {
@@ -32,8 +37,10 @@ using System.Threading.Tasks;
 
                         destination.Write(buffer, 0, readBytes);
 
-                        Console.WriteLine("{0:P}", Math.Min(source.Position / fileLength, 1));
+                        Console.WriteLine("{0:P}", (double)source.Position / fileLength);
                     }
+
+                    
             }
             }
         }

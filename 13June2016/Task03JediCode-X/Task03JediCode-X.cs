@@ -30,24 +30,24 @@ using System.Threading.Tasks;
             .Select(int.Parse)
             .ToArray();
 
-        Regex reg1 = new Regex($@"{firstPattern}(?<name>[A-Za-z]{{{firstPattern.Length}}})");
+        Regex reg1 = new Regex($@"{firstPattern}(?<name>[A-Za-z]{{{firstPattern.Length}}})(?![A-Za-z])");
 
-        Regex reg2 = new Regex($@"{secondPattern}(?<message>[A-Za-z0-9]{{{secondPattern.Length}}})");
+        Regex reg2 = new Regex($@"{secondPattern}(?<message>[A-Za-z0-9]{{{secondPattern.Length}}}(?![A-Za-z0-9]))");
 
         var namesData = new Queue<string>();
 
         var tempMessageData = new List<string>();
 
-        foreach (var line in linesData)
-        {
-            var names = reg1.Matches(line).Cast<Match>().Select(n => n.Groups["name"].Value).ToArray();
+        var linesLikeOneLine = string.Join("", linesData);
 
-            var messages = reg2.Matches(line).Cast<Match>().Select(n => n.Groups["message"].Value).ToArray();
+            var names = reg1.Matches(linesLikeOneLine).Cast<Match>().Select(n => n.Groups["name"].Value).ToArray();
+
+            var messages = reg2.Matches(linesLikeOneLine).Cast<Match>().Select(n => n.Groups["message"].Value).ToArray();
 
             AddNamesNamesToData(names, namesData);
 
             AddQueueTodata(messages, tempMessageData);
-        }
+        
 
        var messagexData = tempMessageData.ToArray();
 
@@ -64,17 +64,16 @@ using System.Threading.Tasks;
 
     private static void TryToFindATrueIndex(Queue<string> namesData, string[] messagexData, int index)
     {
-        if (index >= 0 && index <= messagexData.Length)
+        if (index-1 >= 0 && index-1 < messagexData.Length)
         {
-            if (messagexData[index] != string.Empty)
+            if (namesData.Count > 0)
             {
-                Console.WriteLine($"{namesData.Dequeue()} - {messagexData[index]}");
-                messagexData[index] = string.Empty;
+                Console.WriteLine($"{namesData.Dequeue()} - {messagexData[index - 1]}");
             }
-            else
-            {
-                TryToFindATrueIndex(namesData, messagexData, index + 1);
-            }
+        }
+        else if (index-1<0)
+        {
+            TryToFindATrueIndex(namesData, messagexData, index + 1);
         }
     }
 

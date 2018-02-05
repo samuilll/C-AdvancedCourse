@@ -47,6 +47,7 @@ class Task06ZippingSlicedFiles
         else if (choise == "Assemble")
         {
             Console.WriteLine("Please write the path of the derictory where the files are:");
+
             var filesToAssembleDir = Console.ReadLine();
 
             try
@@ -88,7 +89,7 @@ class Task06ZippingSlicedFiles
 
     private static void Assemble(string[] files)
     {
-        Console.WriteLine("Please choose the name of the file you want to create, including the extension:");
+        Console.WriteLine(@"Please choose the name of the file you want to create, including the extension (It will be in the project folder):");
 
         var newFileName = Console.ReadLine();
 

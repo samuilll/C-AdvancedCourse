@@ -12,8 +12,6 @@ class Task07DirectoryTraversal
     static void Main(string[] args)
     {
 
-
-
         var filesDict = new Dictionary<string, List<FileInfo>>();
 
         var files = GetFilesFromDirectory();
@@ -35,9 +33,13 @@ class Task07DirectoryTraversal
             filesDict[ext].Add(file);
         }
 
-        Console.WriteLine("Choose the file path you want to save the information:");
+        Console.WriteLine("Choose the file name you want to save the information (It will be on the desktop):");
 
-        var filePath = Console.ReadLine();
+        var fileName = Console.ReadLine();
+
+        string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"/";
+
+        var filePath = desktop + fileName;
 
         using (StreamWriter writer = new StreamWriter(filePath))
         {
@@ -59,7 +61,7 @@ class Task07DirectoryTraversal
 
         try
         {
-            Console.WriteLine("Choose the derictory you want to traverse trough:");
+            Console.WriteLine("Choose the path of the directory you want to traverse trough:");
 
             var dirPath = Console.ReadLine();
 

@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
         while (!Directory.Exists(dirPath))
         {
-            Console.WriteLine("Choose the derictory you want to traverse trough:");
+            Console.WriteLine("Choose the path of the directory you want to traverse trough:");
 
             dirPath = Console.ReadLine();
         }
@@ -29,11 +29,15 @@ using System.Threading.Tasks;
 
     private static void SaveTheInformation(Dictionary<string, List<FileInfo>> filesDict)
     {
-        Console.WriteLine("Choose the file path you want to save the information:");
+        Console.WriteLine("Choose the file name you want to save the information (It will be on the desktop):");
 
-        var filePath = Console.ReadLine();
+        var fileName = Console.ReadLine();
 
         var filesCounter = 0;
+
+        string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"/";
+
+        var filePath = desktop + fileName;
 
         using (StreamWriter writer = new StreamWriter(filePath))
         {

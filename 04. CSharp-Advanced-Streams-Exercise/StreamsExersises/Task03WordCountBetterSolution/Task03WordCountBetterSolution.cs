@@ -11,7 +11,7 @@ class Task03WordCountBetterSolution
     static void Main(string[] args)
     {
 
-        using (StreamReader readerOne = new StreamReader("../../words.txt"))
+        using (StreamReader readerOne = new StreamReader($"../../words.txt"))
         {
             using (StreamReader readerTwo = new StreamReader("../../text.txt"))
             {
