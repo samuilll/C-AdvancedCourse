@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BashSoft.IO;
-using BashSoft.Judge;
 
-namespace BashSoft
+namespace Task04
 {
-    class Launcher
+    class Task04
     {
         static void Main(string[] args)
         {
 
-            InputReader.StartReadingCommnads();
+            string word = "012";
 
-            
+            int num = int.Parse(word);
 
+            Console.WriteLine(num+1);
         }
+               
     }
 }

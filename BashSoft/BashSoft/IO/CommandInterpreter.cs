@@ -27,35 +27,35 @@ namespace BashSoft.IO
                     break;
 
                 case "ls":
-                     TryTraverseFolders(input, data);
+                    TryTraverseFolders(input, data);
                     break;
 
                 case "cmp":
-                     TryCompareFiles(input, data);
+                    TryCompareFiles(input, data);
                     break;
 
                 case "cdRel":
-                     TryChangePathRelatively(input, data);
+                    TryChangePathRelatively(input, data);
                     break;
 
                 case "cdAbs":
-                     TryChangePathAbsolute(input, data);
+                    TryChangePathAbsolute(input, data);
                     break;
 
                 case "readDb":
-                     TryReadDatabaseFromFile(input, data);
+                    TryReadDatabaseFromFile(input, data);
                     break;
 
                 case "help":
-                     TryGetHelp(input, data);
+                    TryGetHelp(input, data);
                     break;
 
                 case "filter":
-                    // TryFilterAndTake(input, data);
+                    TryFilterAndTake(input, data);
                     break;
 
                 case "order"://decOrder
-                             //  TryOrderAndTake(input, data);
+                              TryOrderAndTake(input, data);
                     break;
 
                 case "download":
@@ -67,12 +67,122 @@ namespace BashSoft.IO
                     break;
 
                 case "show":
-                    // TryShowWantedData(input, data);
+                    TryShowWantedData(input, data);
                     break;
 
                 default:
                     DisplayInvalidCommandMessage(input);
                     break;
+            }
+        }
+
+        private static void TryOrderAndTake(string input, string[] data)
+        {
+            if (data.Length == 5)
+            {
+                string coursename = data[1];
+                string comparison = data[2].ToLower();
+                string takeCommand = data[3].ToLower();
+                string takeQuantity = data[4].ToLower();
+
+                TryParseParametersForOrderAndTake(takeCommand, takeQuantity, coursename, comparison);
+            }
+            else
+            {
+                DisplayInvalidCommandMessage(input);
+            }
+        }
+
+        private static void TryParseParametersForOrderAndTake(string takeCommand, string takeQuantity, string coursename, string comparison)
+        {
+            if (takeCommand == "take")
+            {
+                if (takeQuantity == "all")
+                {
+                    StudentsRepository.OrderAndTake(coursename, comparison);
+                }
+                else
+                {
+                    int studentsToTake;
+                    bool hasParsed = Int32.TryParse(takeQuantity, out studentsToTake);
+
+                    if (hasParsed)
+                    {
+                        StudentsRepository.OrderAndTake(coursename, comparison, studentsToTake);
+                    }
+                    else
+                    {
+                        OutputWriter.DisplayException(ExceptionMessages.InvalidTakeQuantityParameter);
+
+                    }
+                }
+            }
+        }
+        private static void TryFilterAndTake(string input, string[] data)
+        {
+            if (data.Length == 5)
+            {
+                string coursename = data[1];
+                string filter = data[2].ToLower();
+                string takeCommand = data[3].ToLower();
+                string takeQuantity = data[4].ToLower();
+
+                TryParseParametersForFilterAndTake(takeCommand, takeQuantity, coursename, filter);
+            }
+            else
+            {
+                DisplayInvalidCommandMessage(input);
+            }
+        }
+
+        private static void TryParseParametersForFilterAndTake(string takeCommand, string takeQuantity, string coursename, string filter)
+        {
+            if (takeCommand == "take")
+            {
+                if (takeQuantity=="all")
+                {
+                    StudentsRepository.FilerAndTake(coursename, filter);
+                }
+                else
+                {
+                    int studentsToTake;
+                    bool hasParsed = Int32.TryParse(takeQuantity,out studentsToTake);
+
+                    if (hasParsed)
+                    {
+                        StudentsRepository.FilerAndTake(coursename, filter, studentsToTake);
+                    }
+                    else
+                    {
+                        OutputWriter.DisplayException(ExceptionMessages.InvalidTakeQuantityParameter);
+
+                    }
+                }
+
+            }
+            else
+            {
+                OutputWriter.DisplayException(ExceptionMessages.InvalidTakeCommand);
+            }
+        }
+
+        private static void TryShowWantedData(string input, string[] data)
+        {
+            if (data.Length == 2)
+            {
+                string courseName = data[1];
+
+                StudentsRepository.GetAllStudentsFromTheCourse(courseName);
+            }
+            else if (data.Length == 3)
+            {
+                string courseName = data[1];
+                string userName = data[2];
+                StudentsRepository.GetStudentScoresFromTheCourse(courseName, userName);
+            }
+            else
+            {
+                DisplayInvalidCommandMessage(input);
             }
         }
 

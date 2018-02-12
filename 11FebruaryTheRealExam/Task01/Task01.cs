@@ -3,20 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BashSoft.IO;
-using BashSoft.Judge;
 
-namespace BashSoft
+namespace Task01
 {
-    class Launcher
+    class Task01
     {
         static void Main(string[] args)
         {
-
-            InputReader.StartReadingCommnads();
-
-            
-
         }
     }
 }

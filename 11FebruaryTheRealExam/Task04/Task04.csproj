@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DDE6BC89-36F9-4838-B13E-5FBCB5361DA0}</ProjectGuid>
+    <ProjectGuid>{303463AE-38FC-4BC0-AD53-48EB7BBD0EA0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BashSoft</RootNamespace>
-    <AssemblyName>BashSoft</AssemblyName>
+    <RootNamespace>Task04</RootNamespace>
+    <AssemblyName>Task04</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,18 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IO\CommandInterpreter.cs" />
-    <Compile Include="IO\InputReader.cs" />
-    <Compile Include="Repository\RepositoryFilters.cs" />
-    <Compile Include="Repository\RepositorySorters.cs" />
-    <Compile Include="StaticData\ExeptionMessages.cs" />
-    <Compile Include="IO\IOManager.cs" />
-    <Compile Include="Judge\Tester.cs" />
-    <Compile Include="Launcher.cs" />
-    <Compile Include="IO\OutputWriter.cs" />
+    <Compile Include="Task04.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StaticData\SessionData.cs" />
-    <Compile Include="Repository\StudentsRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
