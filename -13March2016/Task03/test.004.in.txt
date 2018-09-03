@@ -1,6 +1,0 @@
-<inverse content="abcde"/>
-<inverse content="ABCDE"/>
-<inverse content="abcDE"/>
-<reverse content="asdasd"/>
-<reverse content="dsadsa"/>
-<stop/>

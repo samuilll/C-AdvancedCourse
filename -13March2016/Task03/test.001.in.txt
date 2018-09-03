@@ -1,2 +1,0 @@
-<inverse content="aBcDeFgHiJkLmNoPqRsTuVwXyZ"/>
-<stop/>
